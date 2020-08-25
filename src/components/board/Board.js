@@ -21,31 +21,31 @@ const Cell = (props) => {
             default:
                 if (!props.showShip) {
                     return 'grey';
-                } else return '#D3D3D3'
+                } return '#D3D3D3'
         }
     }
 
     const handleClick = () => {
         if (!(props.id == CELL_ID_VALUE.WATER || props.id == CELL_ID_VALUE.HIT || props.id == CELL_ID_VALUE.DESTROYED)) {
-            props.onClick()
+          props.onClick();
         }
-    }
+      };
 
-    return(
-        <CellDiv color={getCellColor()} onMouseOver={() => props.onMouseHover()} onClick={() => handleClick()}/>
-    )
-}
+      return (
+        <CellDiv color={getCellColor()} onMouseOver={() => props.onMouseHover()} onClick={() => handleClick()} />
+      );
+    };
 
 const Board = (props) => {
     const [positionsToMark, setPositionsToMark] = useState(undefined);
 
-    const markPositions = (row,col) => {
+    const markPositions = (row, col) => {
         setPositionsToMark(undefined);
         if (props.shipSelected) {
-            const positions = helpers.getShipPositions(props.board, props.shipSelected.size, row, col, props.shipOrientation);
-            if (positions) {
-                setPositionsToMark(positions);
-            } else {
+          const positions = helpers.getShipPositions(props.board, props.shipSelected.size, row, col, props.shipOrientation);
+          if (positions) {
+            setPositionsToMark(positions);
+          } else {
                 setPositionsToMark(undefined);
             }
         } 
@@ -53,27 +53,27 @@ const Board = (props) => {
 
     const getBoard = () => {
         let mark;
-        const board = props.board.map((row, x) => {
-            return (
-                    <Row key={x}>{row.map((column, y) => {
-                        mark = positionsToMark && positionsToMark.findIndex(pos => pos.row == x && pos.col == y) !== -1;
-                        return (
-                            <div key={y}>
-                                <Cell
-                                    showShip={props.cpu}
-                                    code={props.board[x][y].code}
-                                    id={props.board[x][y].id}
-                                    onMouseHover={() => markPositions(x,y)}
-                                    mark={mark}
-                                    onClick={() => { props.click && props.onClickBoard({row: x, col: y})}}
-                                />
-                            </div>
-                        )})}
-                    </Row>
-            )
-        });
+        const board = props.board.map((row, x) => (
+          <Row key={x}>
+            {row.map((column, y) => {
+              mark = positionsToMark && positionsToMark.findIndex((pos) => pos.row == x && pos.col == y) !== -1;
+              return (
+                <div key={y}>
+                  <Cell
+                    showShip={props.cpu}
+                    code={props.board[x][y].code}
+                    id={props.board[x][y].id}
+                    onMouseHover={() => markPositions(x, y)}
+                    mark={mark}
+                    onClick={() => { props.click && props.onClickBoard({ row: x, col: y }); }}
+                  />
+                </div>
+              );
+            })}
+          </Row>
+        ));
         return board;
-    }
+      };
 
     return(
         <Container>
@@ -83,7 +83,7 @@ const Board = (props) => {
 }
 
 Board.propTypes = {
-    board: PropTypes.array
+    board: PropTypes.array,
 };
 
 export default Board; 

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SHIP_TYPE_CARRIER, SHIP_TYPE_CRUISER, SHIP_TYPE_SUBMARINE, SHIP_ORIENTATION } from '../../utils/Constants';
 import { Container, RowContainer, Row, SelectButton } from './styles';
-import Submarine from '../../assets/submarine.png';
-import Cruiser from '../../assets/cruiser.png';
-import Carrier from '../../assets/carrier.png';
+
 
 const ShipSelector = (props) => {
     const [carriers, setCarriers] = useState(0);
@@ -103,9 +101,9 @@ const ShipSelector = (props) => {
 
     return(
         <Container>
-            {renderRow("Carriers", carriers, Carrier)}
-            {renderRow("Cruisers", cruisers, Cruiser)}
-            {renderRow("Submarines", submarines, Submarine)}
+            {renderRow("Carriers", carriers)}
+            {renderRow("Cruisers", cruisers)}
+            {renderRow("Submarines", submarines)}
             {renderRotateButton()}
         </Container>
     )

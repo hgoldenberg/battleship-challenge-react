@@ -135,7 +135,7 @@ const mapStateToProps = (state, props) => ({
     playerName: state.game.playerName
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     initPlayerBoard: () => dispatch(BoardActions.initEmptyBoard()),
     updatePlayerBoard: (args) => dispatch(BoardActions.updatePlayerBoard(args)),
     updatePlayerName: (args) => dispatch(GameActions.updatePlayerName(args)),

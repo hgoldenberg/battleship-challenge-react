@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShipSelector snapshot Check the ShipSelector Snapshot 1`] = `
+<div>
+  <div
+    class="sc-AxjAm jJALcW"
+  >
+    <div
+      class="sc-AxirZ dWXyjM"
+    >
+      <div
+        class="sc-AxiKw jhuQxN"
+      >
+        <label>
+          Carriers
+          :   
+          0
+        </label>
+        <button
+          class="sc-AxhUy clkaBI"
+        >
+          Select
+        </button>
+      </div>
+    </div>
+    <div
+      class="sc-AxirZ dWXyjM"
+    >
+      <div
+        class="sc-AxiKw jhuQxN"
+      >
+        <label>
+          Cruisers
+          :   
+          0
+        </label>
+        <button
+          class="sc-AxhUy clkaBI"
+        >
+          Select
+        </button>
+      </div>
+    </div>
+    <div
+      class="sc-AxirZ dWXyjM"
+    >
+      <div
+        class="sc-AxiKw jhuQxN"
+      >
+        <label>
+          Submarines
+          :   
+          0
+        </label>
+        <button
+          class="sc-AxhUy clkaBI"
+        >
+          Select
+        </button>
+      </div>
+    </div>
+    <div
+      class="sc-AxiKw jhuQxN"
+    >
+      <label
+        style="padding-right: 15px;"
+      >
+        Dir: Vertical
+      </label>
+      <button
+        style="padding-right: 15px;"
+      >
+        Rotate
+      </button>
+    </div>
+  </div>
+</div>
+`;

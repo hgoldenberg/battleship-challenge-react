@@ -13,22 +13,24 @@ const EndGameScreen = (props) => {
         props.restartGame();
     }
 
-    const renderContent = () => {
-        return(
-            <div>
-                <div style={{flexDirection: "column"}}>
-                    <Message>
-                        <Text>{props.winner} wins!</Text>
-                        <Link style={{paddingTop: 50, paddingRight: '40px'}} to="/">
-                            <ScreenButton onClick={() => handleClickRestart()}>
-                                Restart 
-                            </ScreenButton>
-                        </Link>
-                    </Message>
-                </div>
-            </div>
-        )
-    }
+    const renderContent = () => (
+        <div>
+          <div style={{ flexDirection: 'column' }}>
+            <Message>
+              <Text>
+                {props.winner}
+                {' '}
+                wins!
+              </Text>
+              <Link style={{ paddingTop: 50, paddingRight: '40px' }} to="/">
+                <ScreenButton onClick={() => handleClickRestart()}>
+                  Restart
+                </ScreenButton>
+              </Link>
+            </Message>
+          </div>
+        </div>
+      );
 
     return (
         <Screen
@@ -48,7 +50,7 @@ const mapStateToProps = (state, props) => ({
     winner: state.game.winner
 })
 
-const mapDispatchToProps = dispatch => ({    
+const mapDispatchToProps = (dispatch) => ({    
     resetBoard: () => dispatch(BoardActions.restart()),
     restartGame: () => dispatch(GameActions.restart())
 })

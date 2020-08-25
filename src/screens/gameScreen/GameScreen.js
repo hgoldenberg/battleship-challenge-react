@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import BoardActions from '../../redux/actions/BoardActions';
 import GameActions from '../../redux/actions/GameActions';
 import Board from '../../components/board/Board';
@@ -17,11 +17,11 @@ const GameScreen = (props) => {
     }, []);
 
     useEffect(() => {
-        if (props.currentPlayer == "CPU" && !props.updatedPlayerBoard) {
+        if (props.currentPlayer == 'CPU' && !props.updatedPlayerBoard) {
             props.cpuAttack();
         }
 
-        if (props.updatedPlayerBoard && props.currentPlayer == "CPU") {
+        if (props.updatedPlayerBoard && props.currentPlayer == 'CPU') {
             setTimeout(setTurn, 1000);
         }
     }, [props.currentPlayer, props.updatedPlayerBoard]);
@@ -45,7 +45,7 @@ const GameScreen = (props) => {
     }
 
    const handleClickBoard = (position) => {
-       if (props.currentPlayer !== "CPU") {
+       if (props.currentPlayer !== 'CPU') {
             props.playerAttack(position);
             setTimeout(setTurn, 1000);
        }  
@@ -107,7 +107,7 @@ const mapStateToProps = (state, props) => ({
     winner: state.game.winner
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     initCpuBoard: () => dispatch(BoardActions.initCpuBoard()),
     playerAttack: (args) => dispatch(BoardActions.playerAttack(args)),
     cpuAttack: () => dispatch(BoardActions.cpuAttack()),

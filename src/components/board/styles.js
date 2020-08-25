@@ -16,7 +16,7 @@ export const CellDiv = styled.div`
     width: 39px;
     height: 39px;
     border: 1px solid black;
-    background-color: ${props => props.color ? props.color : '#D3D3D3'};
+    background-color: ${(props) => (props.color ? props.color : '#D3D3D3')};
     @media screen and (max-width: 480px) {
         width: 30px;
         height: 30px;
