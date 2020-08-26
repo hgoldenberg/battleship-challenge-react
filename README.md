@@ -5,24 +5,24 @@ Battleship game
 Develop a simplified React version of the battleship game; player vs. CPU
 
 # GAME ELEMENTS AND CHARACTERISTICS
-10x10 board size
-1 carrier of 4 spaces
-3 cruisers of 3 spaces
-1 submarine of 2 spaces
-Ships must be straight lines
-Ships can be placed horizontally or vertically
+* 10x10 board size
+* 1 carrier of 4 spaces
+* 3 cruisers of 3 spaces
+* 1 submarine of 2 spaces
+* Ships must be straight lines
+* Ships can be placed horizontally or vertically
 
 # BASIC GAMEPLAY
 The game should have at least 3 screens with the following components and actions. All mockups are just for reference and can be improved.
 
 # START SCREEN
-Place your ships on the board Enter player name
-Button with “Start game” label
+* Place your ships on the board Enter player name
+* Button with “Start game” label
                                              
 # GAME SCREEN
-Launched missiles reference
-Surrender button to end the game manually
-Player name
+* Launched missiles reference
+* Surrender button to end the game manually
+* Player name
 
 # END GAME SCREEN
 
